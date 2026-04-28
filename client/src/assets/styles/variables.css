@@ -1,0 +1,50 @@
+:root {
+  /* Typography - clean, natural (serif for brand alignment with logo) */
+  --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Outfit', var(--font-sans);
+
+  /* Bioverma brand: sage green + earthy neutrals */
+  --color-bg: #f8f9f6;
+  --color-surface: #ffffff;
+  --color-border: #e4e8df;
+  --color-text: #2d3325;
+  --color-text-muted: #5c6552;
+  --color-primary: #7e8d6b;
+  --color-primary-hover: #6b7a5a;
+  --color-on-primary: #ffffff;
+  --color-primary-subtle: rgba(126, 141, 107, 0.14);
+  --shadow-color: rgba(45, 51, 37, 0.08);
+  --color-accent-earth: #8b9b78;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+
+  /* Layout */
+  --max-width: 1200px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* Header for sticky + mobile */
+  --header-height: 60px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root.auto-theme {
+    --color-bg: #1e2219;
+    --color-surface: #2d3325;
+    --color-border: #3d4535;
+    --color-text: #f2f4ef;
+    --color-text-muted: #9ca88e;
+    --color-primary: #8b9b78;
+    --color-primary-hover: #9cad88;
+    --color-on-primary: #1e2219;
+    --color-primary-subtle: rgba(139, 155, 120, 0.25);
+    --shadow-color: rgba(0, 0, 0, 0.25);
+  }
+}

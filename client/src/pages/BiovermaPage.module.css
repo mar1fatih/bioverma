@@ -1,0 +1,490 @@
+.page {
+  padding-bottom: var(--space-2xl);
+}
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: var(--space-xl);
+  padding: var(--space-2xl);
+  margin-bottom: var(--space-2xl);
+  background: linear-gradient(180deg, var(--color-primary-subtle) 0%, transparent 70%);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.heroContent {
+  text-align: right;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-md);
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 5vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--space-md);
+  color: var(--color-text);
+  line-height: 1.25;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heroSubheading {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  max-width: 520px;
+  margin: 0 0 var(--space-lg);
+  line-height: 1.6;
+}
+
+.heroMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.metaPill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.heroVisual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.productCard {
+  width: min(520px, 100%);
+  padding: var(--space-md);
+  background: radial-gradient(circle at 50% 25%, rgba(255, 255, 255, 0.95), var(--color-surface));
+  border-radius: var(--radius-lg);
+  box-shadow: 0 14px 30px var(--shadow-color);
+  border: 1px solid var(--color-border);
+}
+
+.productImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 12px rgba(45, 51, 37, 0.12));
+}
+
+.ctaPrimary {
+  display: inline-block;
+  padding: var(--space-md) var(--space-xl);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: background 0.2s, transform 0.15s;
+}
+
+.ctaPrimary:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-1px);
+}
+
+/* Sections */
+.section {
+  margin-top: var(--space-2xl);
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 var(--space-lg);
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0 0 var(--space-xl);
+  color: var(--color-text);
+  text-align: center;
+}
+
+/* Product Gallery */
+.galleryLayout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-xl);
+  align-items: stretch;
+}
+
+.galleryMain,
+.galleryInfo {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 16px var(--shadow-color);
+}
+
+.galleryMain {
+  padding: var(--space-lg);
+}
+
+.zoomFrame {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 249, 246, 0.9));
+  border: 1px solid var(--color-border);
+}
+
+.zoomImage {
+  width: 100%;
+  height: auto;
+  transform: scale(1);
+  transition: transform 0.35s ease;
+}
+
+.zoomFrame:hover .zoomImage {
+  transform: scale(1.08);
+}
+
+.galleryInfo {
+  padding: var(--space-xl);
+}
+
+.galleryTitle {
+  margin: 0 0 var(--space-md);
+  color: var(--color-text);
+  font-size: 1.15rem;
+}
+
+.specList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.specItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+}
+
+.specLabel {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.specValue {
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+/* Features */
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.featureIcon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.featureItem div {
+  line-height: 1.55;
+  color: var(--color-text);
+}
+
+.featureItem strong {
+  color: var(--color-text);
+}
+
+/* Benefits */
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-lg);
+}
+
+.benefitCard {
+  padding: var(--space-xl);
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 8px var(--shadow-color);
+  border: 1px solid var(--color-border);
+}
+
+.benefitNumber {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  background: var(--color-primary-subtle);
+  color: var(--color-primary);
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-md);
+}
+
+.benefitTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 var(--space-sm);
+  color: var(--color-text);
+}
+
+.benefitCard p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* Testimonials */
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-xl);
+}
+
+.testimonial {
+  margin: 0;
+  padding: var(--space-xl);
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.testimonialText {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin: 0 0 var(--space-md);
+}
+
+.testimonialAuthor {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  font-style: normal;
+}
+
+/* FAQ */
+.faqList {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.faqItem {
+  padding: var(--space-lg);
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.faqQuestion {
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin: 0 0 var(--space-sm);
+  color: var(--color-text);
+}
+
+.faqAnswer {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+/* Final CTA */
+.finalCta {
+  text-align: center;
+  padding: var(--space-2xl) var(--space-lg);
+  margin-top: var(--space-2xl);
+  background: linear-gradient(180deg, transparent 0%, var(--color-primary-subtle) 100%);
+  border-radius: var(--radius-lg);
+}
+
+.finalCtaTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 4vw, 1.75rem);
+  font-weight: 700;
+  margin: 0 0 var(--space-md);
+  color: var(--color-text);
+}
+
+.finalCtaSubtext {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  max-width: 480px;
+  margin: 0 auto var(--space-xl);
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: var(--space-xl) var(--space-lg);
+    gap: var(--space-lg);
+  }
+
+  .heroContent {
+    text-align: center;
+  }
+
+  .heroTitle,
+  .heroSubheading {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .heroMeta {
+    justify-content: center;
+    margin-bottom: var(--space-lg);
+  }
+
+  .galleryLayout,
+  .benefitsGrid,
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionTitle {
+    margin-bottom: var(--space-lg);
+  }
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding-bottom: var(--space-xl);
+  }
+
+  .hero {
+    padding: var(--space-lg) var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+
+  .heroTitle {
+    font-size: clamp(1.4rem, 7vw, 1.85rem);
+    line-height: 1.3;
+  }
+
+  .heroSubheading {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .metaPill {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .productCard {
+    width: 100%;
+    padding: var(--space-sm);
+  }
+
+  .galleryMain {
+    padding: var(--space-md);
+  }
+
+  .galleryInfo {
+    padding: var(--space-md);
+  }
+
+  .specItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+    padding: 0.6rem 0.7rem;
+  }
+
+  .section {
+    margin-top: var(--space-xl);
+    padding: 0 var(--space-sm);
+  }
+
+  .sectionTitle {
+    font-size: 1.15rem;
+  }
+
+  .featureItem {
+    padding: var(--space-md);
+    gap: var(--space-sm);
+  }
+
+  .benefitCard,
+  .testimonial,
+  .faqItem {
+    padding: var(--space-lg);
+  }
+
+  .finalCta {
+    padding: var(--space-xl) var(--space-md);
+    margin-top: var(--space-xl);
+  }
+
+  .finalCtaSubtext {
+    font-size: 0.95rem;
+    margin-bottom: var(--space-lg);
+  }
+}
+
+@media (max-width: 380px) {
+  .hero {
+    padding: var(--space-md) var(--space-sm);
+  }
+
+  .ctaPrimary {
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem 1rem;
+  }
+
+  .featureIcon {
+    font-size: 1.25rem;
+  }
+}

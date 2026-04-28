@@ -1,0 +1,27 @@
+.page {
+  text-align: center;
+  padding: var(--space-2xl) var(--space-lg);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-md);
+}
+
+.text {
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-lg);
+}
+
+.link {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

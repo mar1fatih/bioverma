@@ -1,0 +1,47 @@
+export default {
+  nav: {
+    home: 'Home',
+    nutrition: 'Nutrition',
+    skinCare: 'Skin Care',
+    makeUp: 'Make Up',
+    parfum: 'Parfum',
+    body: 'Body',
+    categories: 'Categories',
+  },
+  home: {
+    title: 'Welcome to Bioverma',
+    subtitle: 'Discover our selection of nutrition, skincare, makeup, fragrances and body care.',
+    shopByCategory: 'Shop by category',
+    featured: 'Featured',
+  },
+  category: {
+    title: 'Category',
+    noProducts: 'No products in this category yet.',
+    backToHome: 'Back to home',
+  },
+  notFound: {
+    title: 'Page not found',
+    message: 'The page you are looking for does not exist.',
+    backToHome: 'Back to home',
+  },
+  common: {
+    language: 'Language',
+    english: 'English',
+    french: 'French',
+    search: 'Search',
+    cart: 'Cart',
+    login: 'Login',
+    allRightsReserved: 'All rights reserved.',
+    contact: 'Contact',
+    about: 'About us',
+    faq: 'FAQ',
+    shipping: 'Shipping & returns',
+  },
+  footer: {
+    tagline: 'Your well-being and beauty, one click away.',
+    links: 'Quick links',
+    legal: 'Legal',
+    newsletter: 'Subscribe to our newsletter',
+    subscribe: 'Subscribe',
+  },
+};

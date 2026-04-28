@@ -1,0 +1,16 @@
+{
+  "name": "web-store-server",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "test": "node --test tests/"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {}
+}
