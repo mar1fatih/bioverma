@@ -1,16 +1,14 @@
 export default {
   nav: {
     home: 'Accueil',
-    nutrition: 'Nutrition',
     skinCare: 'Soins de la peau',
     makeUp: 'Maquillage',
-    parfum: 'Parfum',
     body: 'Corps',
     categories: 'Catégories',
   },
   home: {
     title: 'Bienvenue chez Bioverma',
-    subtitle: 'Découvrez notre sélection en nutrition, soins, maquillage, parfums et soins du corps.',
+    subtitle: 'Découvrez notre sélection en soins de la peau, maquillage et soins du corps.',
     shopByCategory: 'Acheter par catégorie',
     featured: 'À la une',
     featuredProductTitle: 'Produit vedette',

@@ -13,6 +13,7 @@ export function CategoryGrid() {
           key={cat.slug}
           slug={cat.slug}
           label={t(`nav.${cat.id}`)}
+          imageSrc={cat.imageSrc}
         />
       ))}
     </div>

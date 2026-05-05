@@ -1,16 +1,14 @@
 export default {
   nav: {
     home: 'Home',
-    nutrition: 'Nutrition',
     skinCare: 'Skin Care',
     makeUp: 'Make Up',
-    parfum: 'Parfum',
     body: 'Body',
     categories: 'Categories',
   },
   home: {
     title: 'Welcome to Bioverma',
-    subtitle: 'Discover our selection of nutrition, skincare, makeup, fragrances and body care.',
+    subtitle: 'Discover our selection of skincare, makeup and body care.',
     shopByCategory: 'Shop by category',
     featured: 'Featured',
   },

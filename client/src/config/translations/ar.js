@@ -1,16 +1,14 @@
 export default {
   nav: {
     home: 'الرئيسية',
-    nutrition: 'التغذية',
     skinCare: 'العناية بالبشرة',
     makeUp: 'المكياج',
-    parfum: 'العطور',
     body: 'العناية بالجسم',
     categories: 'التصنيفات',
   },
   home: {
     title: 'مرحبًا بك في Bioverma',
-    subtitle: 'اكتشف تشكيلتنا من التغذية، العناية بالبشرة، المكياج، العطور والعناية بالجسم.',
+    subtitle: 'اكتشف تشكيلتنا من العناية بالبشرة، المكياج والعناية بالجسم.',
     shopByCategory: 'تسوق حسب التصنيف',
     featured: 'الأكثر تميزًا',
     featuredProductTitle: 'منتج مميز',
