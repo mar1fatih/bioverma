@@ -21,3 +21,18 @@ export const CATEGORIES = [
     imageSrc: '/category-body.png',
   },
 ];
+
+export const PRODUCT_CATEGORIES = [
+  {
+    category: CATEGORY_SLUGS.SKIN_CARE,
+    products: ['bioverma-creme-retinole'],
+  },
+  {
+    category: CATEGORY_SLUGS.MAKE_UP,
+    products: [],
+  },
+  {
+    category: CATEGORY_SLUGS.BODY,
+    products: ['bioverma-shampoing-anti-chute', 'bioverma-shampoing-proteines', 'bioverma-poudre-blanchiment-dents'],
+  },
+];
