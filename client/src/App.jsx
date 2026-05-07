@@ -8,6 +8,7 @@ import { AntiChutePage } from './pages/AntiChutePage';
 import { RetinolePage } from './pages/RetinolePage';
 import { ProteinesPage } from './pages/ProteinesPage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import ScrollToTop from './components/common/ScrollToTop';
 import { ROUTES } from './constants/routes';
 import './assets/styles/global.css';
 
@@ -15,6 +16,7 @@ function App() {
   return (
     <LanguageProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path={ROUTES.HOME} element={<MainLayout />}>
             <Route index element={<HomePage />} />
