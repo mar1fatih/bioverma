@@ -9,19 +9,16 @@ export const PRODUCTS = [
     product_name: 'bioverma-creme-retinole',
     sku: 'creme-retanol',
     price: 199,
-
   },
   {
     product_name: 'bioverma-shampoing-anti-chute',
     sku: 'sham-anti-chute',
     price: 199,
-
   },
   {
     product_name: 'bioverma-shampoing-proteines',
     sku: 'shampoing-proteine',
     price: 199,
-
   },
   {
     product_name: 'bioverma-poudre-blanchiment-dents',
