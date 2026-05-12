@@ -19,7 +19,7 @@ export function BiovermaPage() {
             <span className={styles.metaPill}>50g</span>
             <span className={styles.metaPill}>{t('bioverma.metaDaily')}</span>
           </div>
-          <Link to={ROUTES.HOME} className={styles.ctaPrimary}>
+          <Link to={`${ROUTES.ORDER}?sku=poudre-dents`} className={styles.ctaPrimary}>
             {t('bioverma.cta')}
           </Link>
         </div>
@@ -164,7 +164,7 @@ export function BiovermaPage() {
       <section className={styles.finalCta}>
         <h2 className={styles.finalCtaTitle}>{t('bioverma.finalTitle')}</h2>
         <p className={styles.finalCtaSubtext}>{t('bioverma.finalText')}</p>
-        <Link to={ROUTES.HOME} className={styles.ctaPrimary}>
+        <Link to={`${ROUTES.ORDER}?sku=poudre-dents`} className={styles.ctaPrimary}>
           {t('bioverma.cta')}
         </Link>
       </section>

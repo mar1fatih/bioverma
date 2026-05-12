@@ -18,7 +18,7 @@ export function AntiChutePage() {
             <span className={styles.metaPill}>150ml</span>
             <span className={styles.metaPill}>{t('antiChute.metaDaily')}</span>
           </div>
-          <Link to={ROUTES.HOME} className={styles.ctaPrimary}>
+          <Link to={`${ROUTES.ORDER}?sku=sham-anti-chute`} className={styles.ctaPrimary}>
             {t('antiChute.cta')}
           </Link>
         </div>
@@ -157,7 +157,7 @@ export function AntiChutePage() {
       <section className={styles.finalCta}>
         <h2 className={styles.finalCtaTitle}>{t('antiChute.finalTitle')}</h2>
         <p className={styles.finalCtaSubtext}>{t('antiChute.finalText')}</p>
-        <Link to={ROUTES.HOME} className={styles.ctaPrimary}>
+        <Link to={`${ROUTES.ORDER}?sku=sham-anti-chute`} className={styles.ctaPrimary}>
           {t('antiChute.cta')}
         </Link>
       </section>

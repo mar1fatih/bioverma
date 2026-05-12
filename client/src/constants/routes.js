@@ -6,4 +6,5 @@ export const ROUTES = {
   RETINOLE: '/product/bioverma-creme-retinole',
   PROTEINES: '/product/bioverma-shampoing-proteines',
   category: (slug) => `/category/${slug}`,
+  ORDER: '/order',
 };

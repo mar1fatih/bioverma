@@ -1,0 +1,31 @@
+.page {
+  padding: 60px 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 40px;
+  font-size: 16px;
+}
+
+.successBox {
+  padding: 20px;
+  border-radius: 12px;
+  background: #eaffea;
+  border: 1px solid #8ce28c;
+  text-align: center;
+  font-weight: 600;
+}

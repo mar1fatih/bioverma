@@ -18,7 +18,7 @@ export function ProteinesPage() {
             <span className={styles.metaPill}>150ml</span>
             <span className={styles.metaPill}>{t('proteines.metaDaily')}</span>
           </div>
-          <Link to={ROUTES.HOME} className={styles.ctaPrimary}>
+          <Link to={`${ROUTES.ORDER}?sku=shampoing-proteine`} className={styles.ctaPrimary}>
             {t('proteines.cta')}
           </Link>
         </div>
@@ -157,7 +157,7 @@ export function ProteinesPage() {
       <section className={styles.finalCta}>
         <h2 className={styles.finalCtaTitle}>{t('proteines.finalTitle')}</h2>
         <p className={styles.finalCtaSubtext}>{t('proteines.finalText')}</p>
-        <Link to={ROUTES.HOME} className={styles.ctaPrimary}>
+          <Link to={`${ROUTES.ORDER}?sku=shampoing-proteine`} className={styles.ctaPrimary}>
           {t('proteines.cta')}
         </Link>
       </section>

@@ -251,4 +251,37 @@ export default {
     finalTitle: 'Adoptez la routine proteinee des aujourd hui',
     finalText: 'Offrez a vos cheveux un soin fortifiant pour plus de force, de souplesse et d eclat.',
   },
+  order: {
+    title: 'Passer une commande',
+    subtitle: 'Remplissez le formulaire pour envoyer votre commande.',
+    successBox: '✅ Votre commande a été envoyée avec succès !',
+
+    // form labels
+    fullNameLabel: 'Nom complet *',
+    phoneLabel: 'Téléphone *',
+    addressLabel: 'Adresse (optionnel)',
+    skuLabel: 'SKU du produit *',
+    quantityLabel: 'Quantité *',
+    priceLabel: 'Prix(Dirham) *',
+    noteLabel: 'Note (optionnel)',
+
+    // placeholders
+    fullNamePlaceholder: 'Entrez votre nom',
+    phonePlaceholder: '+212...',
+    addressPlaceholder: 'Votre adresse',
+    notePlaceholder: 'Ajouter une note (optionnel)...',
+
+    // buttons
+    submitButton: 'Envoyer la commande',
+    sendingButton: 'Envoi en cours...',
+
+    // messages
+    errorBox: '❌ Une erreur est survenue.',
+    requiredFullName: 'Le nom complet est obligatoire.',
+    requiredPhone: 'Le téléphone est obligatoire.',
+    invalidPhoneNumber: "Le numéro de téléphone est invalide.",
+    requiredSku: 'Le SKU du produit est obligatoire.',
+    invalidQuantity: 'La quantité doit être valide.',
+    invalidPrice: 'Le prix doit être un nombre positif.',
+  },
 };

@@ -4,6 +4,32 @@ export const CATEGORY_SLUGS = {
   BODY: 'body',
 };
 
+export const PRODUCTS = [
+  {
+    product_name: 'bioverma-creme-retinole',
+    sku: 'creme-retanol',
+    price: 199,
+
+  },
+  {
+    product_name: 'bioverma-shampoing-anti-chute',
+    sku: 'sham-anti-chute',
+    price: 199,
+
+  },
+  {
+    product_name: 'bioverma-shampoing-proteines',
+    sku: 'shampoing-proteine',
+    price: 199,
+
+  },
+  {
+    product_name: 'bioverma-poudre-blanchiment-dents',
+    sku: 'poudre-dents',
+    price: 199,
+  },
+]
+
 export const CATEGORIES = [
   {
     slug: CATEGORY_SLUGS.SKIN_CARE,

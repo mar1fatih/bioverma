@@ -251,4 +251,37 @@ export default {
     finalTitle: 'ابدأ روتين القوة واللمعان اليوم',
     finalText: 'امنح شعرك عناية بروتينية متوازنة ليبدو أقوى وأكثر حيوية كل يوم.',
   },
+    order: {
+    title: "إتمام الطلب",
+    subtitle: "املأ النموذج أدناه لإرسال طلبك.",
+    successBox: "✅ تم إرسال طلبك بنجاح!",
+
+    // form labels
+    fullNameLabel: "الاسم الكامل *",
+    phoneLabel: "رقم الهاتف *",
+    addressLabel: "العنوان (اختياري)",
+    skuLabel: "رمز المنتج (SKU) *",
+    quantityLabel: "الكمية *",
+    priceLabel: "السعر(درهم) *",
+    noteLabel: "ملاحظة (اختياري)",
+
+    // placeholders
+    fullNamePlaceholder: "أدخل اسمك الكامل",
+    phonePlaceholder: "+212...",
+    addressPlaceholder: "أدخل عنوانك",
+    notePlaceholder: "أضف ملاحظة (اختياري)...",
+
+    // buttons
+    submitButton: "إرسال الطلب",
+    sendingButton: "جارٍ الإرسال...",
+
+    // errors
+    errorBox: "❌ حدث خطأ ما.",
+    requiredFullName: "الاسم الكامل مطلوب.",
+    requiredPhone: "رقم الهاتف مطلوب.",
+    invalidPhoneNumber: "رقم الهاتف غير صالح.",
+    requiredSku: "رمز المنتج مطلوب.",
+    invalidQuantity: "الكمية يجب أن تكون صحيحة.",
+    invalidPrice: "السعر يجب أن يكون رقمًا إيجابيًا.",
+  },
 };

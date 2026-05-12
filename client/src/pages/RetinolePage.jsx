@@ -18,7 +18,7 @@ export function RetinolePage() {
             <span className={styles.metaPill}>50ml</span>
             <span className={styles.metaPill}>{t('retinole.metaNight')}</span>
           </div>
-          <Link to={ROUTES.HOME} className={styles.ctaPrimary}>
+          <Link to={`${ROUTES.ORDER}?sku=creme-retanol`} className={styles.ctaPrimary}>
             {t('retinole.cta')}
           </Link>
         </div>
@@ -157,7 +157,7 @@ export function RetinolePage() {
       <section className={styles.finalCta}>
         <h2 className={styles.finalCtaTitle}>{t('retinole.finalTitle')}</h2>
         <p className={styles.finalCtaSubtext}>{t('retinole.finalText')}</p>
-        <Link to={ROUTES.HOME} className={styles.ctaPrimary}>
+        <Link to={`${ROUTES.ORDER}?sku=creme-retanol`} className={styles.ctaPrimary}>
           {t('retinole.cta')}
         </Link>
       </section>

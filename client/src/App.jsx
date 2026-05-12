@@ -7,6 +7,7 @@ import { BiovermaPage } from './pages/BiovermaPage';
 import { AntiChutePage } from './pages/AntiChutePage';
 import { RetinolePage } from './pages/RetinolePage';
 import { ProteinesPage } from './pages/ProteinesPage';
+import { OrderPage } from './pages/OrderPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import ScrollToTop from './components/common/ScrollToTop';
 import { ROUTES } from './constants/routes';
@@ -24,6 +25,7 @@ function App() {
             <Route path={ROUTES.ANTICHUTE} element={<AntiChutePage />} />
             <Route path={ROUTES.RETINOLE} element={<RetinolePage />} />
             <Route path={ROUTES.PROTEINES} element={<ProteinesPage />} />
+            <Route path={ROUTES.ORDER} element={<OrderPage />} />
             <Route path="category/:slug" element={<CategoryPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
