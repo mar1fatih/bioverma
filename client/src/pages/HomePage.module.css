@@ -20,8 +20,6 @@
   overflow: visible;
 }
 
-/* heroImage no longer needed separately — image is inside the SVG */
-
 .title {
   font-family: var(--font-display);
   font-size: clamp(1.75rem, 5vw, 2.5rem);
