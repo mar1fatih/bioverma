@@ -8,6 +8,20 @@
   margin-bottom: var(--space-xl);
 }
 
+.flowerBorder {
+  width: 80%;
+  margin: var(--space-lg) auto 0;
+}
+
+.botanicalBorderSvg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+/* heroImage no longer needed separately — image is inside the SVG */
+
 .title {
   font-family: var(--font-display);
   font-size: clamp(1.75rem, 5vw, 2.5rem);

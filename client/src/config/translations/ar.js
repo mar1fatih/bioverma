@@ -9,6 +9,7 @@ export default {
   home: {
     title: 'مرحبًا بك في Bioverma',
     subtitle: 'اكتشف تشكيلتنا من العناية بالبشرة، المكياج والعناية بالجسم.',
+    heroImageAlt: 'صورة رئيسية لمنتجات Bioverma',
     shopByCategory: 'تسوق حسب التصنيف',
     featured: 'الأكثر تميزًا',
     featuredProductTitle: 'منتج مميز',

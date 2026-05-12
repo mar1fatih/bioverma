@@ -9,6 +9,7 @@ export default {
   home: {
     title: 'Bienvenue chez Bioverma',
     subtitle: 'Découvrez notre sélection en soins de la peau, maquillage et soins du corps.',
+    heroImageAlt: 'Image héro de Bioverma',
     shopByCategory: 'Acheter par catégorie',
     featured: 'À la une',
     featuredProductTitle: 'Produit vedette',
