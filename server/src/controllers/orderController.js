@@ -8,20 +8,30 @@ export const createOrder = async (req, res) => {
       return res.status(400).json({ success: false, errors });
     }
 
-    const ip =
-      req.headers["x-forwarded-for"]?.split(",")[0] ||
-      req.socket.remoteAddress ||
-      "unknown";
+    const now = new Date();
+    const formattedDate =
+    String(now.getDate()).padStart(2, "0") +
+    "/" +
+    String(now.getMonth() + 1).padStart(2, "0") +
+    "/" +
+    now.getFullYear() +
+    " " +
+    String(now.getHours()).padStart(2, "0") +
+    ":" +
+    String(now.getMinutes()).padStart(2, "0") +
+    ":" +
+    String(now.getSeconds()).padStart(2, "0");
 
     const payload = {
-      name: req.body.name.trim(),
+      date_order: formattedDate,
+      full_name: req.body.full_name.trim(),
       phone: req.body.phone.trim(),
-      city: req.body.city.trim(),
       address: req.body.address.trim(),
-      product: req.body.product.trim(),
-      quantity: Number(req.body.quantity),
+      sku: req.body.sku.trim(),
+      qte: Number(req.body.qte),
+      price: Number(req.body.price),
       note: req.body.note?.trim() || "",
-      ip,
+      delivery_note: req.body.delivery_note?.trim() || "",
     };
 
     const response = await fetch(process.env.GOOGLE_SCRIPT_URL, {
