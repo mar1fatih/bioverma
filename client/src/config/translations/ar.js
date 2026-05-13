@@ -16,6 +16,7 @@ export default {
     featuredProductName: 'Bioverma Poudre Blanchiment des Dents',
     featuredProductText: 'بودرة تبييض فعالة وسهلة الاستخدام في المنزل للحصول على ابتسامة أكثر إشراقًا يومًا بعد يوم.',
     featuredProductCta: 'عرض المنتج',
+    featuredProductPrice: '199 درهم',
     featuredProduct2Name: 'Bioverma Shampoing Anti-Chute',
     featuredProduct2Text: 'شامبو مضاد للتساقط بتركيبة غنية لدعم الجذور وتقوية الشعر الضعيف بطريقة لطيفة.',
     featuredProduct2Cta: 'عرض المنتج',

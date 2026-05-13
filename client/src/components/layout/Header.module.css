@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--color-bg);
+  background: #eefceb;/*var(--color-bg);*/
   border-bottom: 1px solid var(--color-border);
   backdrop-filter: saturate(180%) blur(10px);
 }

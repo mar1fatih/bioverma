@@ -16,6 +16,7 @@ export default {
     featuredProductName: 'Bioverma Poudre Blanchiment des Dents',
     featuredProductText: 'Une poudre de blanchiment efficace et simple a utiliser chez vous pour un sourire plus eclatant.',
     featuredProductCta: 'Voir le produit',
+    featuredProductPrice: '199 dirhams',
     featuredProduct2Name: 'Bioverma Shampoing Anti-Chute',
     featuredProduct2Text: 'Un shampoing fortifiant qui aide a reduire la chute et a revitaliser les cheveux fragiles.',
     featuredProduct2Cta: 'Voir le produit',
