@@ -23,6 +23,11 @@ body {
   background: var(--color-bg);
 }
 
+html, body {
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+}
+
 #root {
   min-height: 100vh;
 }

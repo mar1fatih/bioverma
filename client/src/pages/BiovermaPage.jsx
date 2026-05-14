@@ -68,6 +68,10 @@ export function BiovermaPage() {
                 <span className={styles.specLabel}>{t('bioverma.specTypeLabel')}</span>
                 <span className={styles.specValue}>{t('bioverma.specTypeValue')}</span>
               </li>
+              <li className={styles.specItem}>
+                <span className={styles.specLabel}>{t('bioverma.specPriceLabel')}</span>
+                <span className={styles.specValue}>{t('bioverma.specPriceValue')}</span>
+              </li>
             </ul>
           </div>
         </div>

@@ -8,7 +8,7 @@ export const PRODUCTS = [
   {
     product_name: 'bioverma-creme-retinole',
     sku: 'creme-retanol',
-    price: 199,
+    price: 189,
   },
   {
     product_name: 'bioverma-shampoing-anti-chute',
@@ -23,7 +23,7 @@ export const PRODUCTS = [
   {
     product_name: 'bioverma-poudre-blanchiment-dents',
     sku: 'poudre-dents',
-    price: 199,
+    price: 189,
   },
 ]
 

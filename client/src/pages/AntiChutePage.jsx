@@ -66,6 +66,10 @@ export function AntiChutePage() {
                 <span className={styles.specLabel}>{t('antiChute.specTypeLabel')}</span>
                 <span className={styles.specValue}>{t('antiChute.specTypeValue')}</span>
               </li>
+              <li className={styles.specItem}>
+                <span className={styles.specLabel}>{t('antiChute.specPriceLabel')}</span>
+                <span className={styles.specValue}>{t('antiChute.specPriceValue')}</span>
+              </li>
             </ul>
           </div>
         </div>

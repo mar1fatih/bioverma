@@ -66,6 +66,10 @@ export function RetinolePage() {
                 <span className={styles.specLabel}>{t('retinole.specTypeLabel')}</span>
                 <span className={styles.specValue}>{t('retinole.specTypeValue')}</span>
               </li>
+              <li className={styles.specItem}>
+                <span className={styles.specLabel}>{t('retinole.specPriceLabel')}</span>
+                <span className={styles.specValue}>{t('retinole.specPriceValue')}</span>
+              </li>
             </ul>
           </div>
         </div>

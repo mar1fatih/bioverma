@@ -11,6 +11,7 @@ import { OrderPage } from './pages/OrderPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import ScrollToTop from './components/common/ScrollToTop';
 import { ROUTES } from './constants/routes';
+import { WhatsAppLink } from './components/layout/whatsappLink';
 import './assets/styles/global.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
     <LanguageProvider>
       <BrowserRouter>
         <ScrollToTop />
+        <WhatsAppLink />
         <Routes>
           <Route path={ROUTES.HOME} element={<MainLayout />}>
             <Route index element={<HomePage />} />

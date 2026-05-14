@@ -1,0 +1,70 @@
+.mc-topbar{
+  background: linear-gradient(90deg, #e8f5e9, #c8e6c9, #e8f5e9);
+  color: #2d5a3d;
+  overflow:hidden;
+  padding:12px 0;
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.4px;
+  border-top: 1px solid #a8d5a2;
+  border-bottom: 1px solid #a8d5a2;
+  position:relative;
+  direction: ltr;          /* ← always scroll left regardless of page language */
+  unicode-bidi: plaintext; /* ← lets Arabic text still render correctly */
+}
+
+/* pro fade effect */
+.mc-topbar::before,
+.mc-topbar::after{
+  content:"";
+  position:absolute;
+  top:0;
+  width:60px;
+  height:100%;
+  z-index:2;
+  pointer-events:none;
+}
+
+.mc-topbar::before{
+  left:0;
+  background:linear-gradient(to right,#e8f5e9,transparent);
+}
+
+.mc-topbar::after{
+  right:0;
+  background:linear-gradient(to left,#e8f5e9,transparent);
+}
+
+.mc-topbar-track{
+  display:flex;
+  width:max-content;
+  animation:mc-scroll 20s linear infinite;
+}
+
+.mc-topbar-item{
+  white-space:nowrap;
+  padding-right:60px;
+}
+
+.mc-topbar-item strong{
+  font-weight:700;
+}
+
+/* pause on hover */
+.mc-topbar:hover .mc-topbar-track{
+  animation-play-state:paused;
+}
+
+@keyframes mc-scroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+/* mobile */
+@media (max-width:768px){
+  .mc-topbar{
+    font-size:12px;
+    padding:10px 0;
+  }
+}

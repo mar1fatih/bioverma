@@ -66,6 +66,10 @@ export function ProteinesPage() {
                 <span className={styles.specLabel}>{t('proteines.specTypeLabel')}</span>
                 <span className={styles.specValue}>{t('proteines.specTypeValue')}</span>
               </li>
+              <li className={styles.specItem}>
+                <span className={styles.specLabel}>{t('proteines.specPriceLabel')}</span>
+                <span className={styles.specValue}>{t('proteines.specPriceValue')}</span>
+              </li>
             </ul>
           </div>
         </div>
