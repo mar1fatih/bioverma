@@ -146,3 +146,32 @@
     padding: var(--space-md);
   }
 }
+
+.social {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-primary-subtle);
+  color: var(--color-primary);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.socialLink:hover {
+  background: var(--color-primary);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.socialIcon {
+  width: 17px;
+  height: 17px;
+}
