@@ -1,5 +1,5 @@
 export async function createOrder(orderData) {
-  const res = await fetch("http://localhost:5000/api/order", {
+  const res = await fetch("https://bioverma.up.railway.app/api/order", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
