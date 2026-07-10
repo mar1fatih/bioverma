@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from '../hooks/useTranslation';
+import { Helmet } from 'react-helmet-async';
 import { ROUTES } from '../constants/routes';
 import { CategoryGrid } from '../components/store/CategoryGrid';
 import styles from './HomePage.module.css';
@@ -8,7 +9,21 @@ import TopBar from '../components/layout/topBar';
 export function HomePage() {
   const t = useTranslation();
 
+  const seoTitle = `Bioverma | ${t('home.title')}`;
+  const seoDesc = t('home.subtitle');
+
   return (
+    <>
+    <Helmet>
+        <title>{seoTitle}</title>
+        <meta name="description" content={seoDesc} />
+        <link rel="canonical" href="https://bioverma.netlify.app/" />
+
+        <meta property="og:title" content={seoTitle} />
+        <meta property="og:description" content={seoDesc} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://bioverma.netlify.app/main.png" />
+    </Helmet>
     <div className={styles.page}>
       <section className={styles.hero}>
         <h1 className={styles.title}>{t('home.title')}</h1>
@@ -103,5 +118,6 @@ export function HomePage() {
         <CategoryGrid />
       </section>
     </div>
+    </>
   );
 }

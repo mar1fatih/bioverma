@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from '../hooks/useTranslation';
+import { Helmet } from 'react-helmet-async';
 import { ROUTES } from '../constants/routes';
 import styles from './BiovermaPage.module.css';
 
@@ -7,6 +8,16 @@ export function AntiChutePage() {
   const t = useTranslation();
 
   return (
+    <>
+    <Helmet>
+      <title>{`${t('antiChute.badge')} | Bioverma`}</title>
+      <meta name="description" content={t('antiChute.heroSubtitle')} />
+      <link rel="canonical" href="https://bioverma.netlify.app/product/bioverma-shampoing-anti-chute" />
+      
+      <meta property="og:title" content={`${t('antiChute.badge')} | Bioverma`} />
+      <meta property="og:description" content={t('antiChute.heroSubtitle')} />
+      <meta property="og:image" content="https://bioverma.netlify.app/bioverma-anti-chute.png" />
+    </Helmet>
     <div className={styles.page}>
       <section className={styles.hero}>
         <div className={styles.heroContent}>
@@ -166,5 +177,6 @@ export function AntiChutePage() {
         </Link>
       </section>
     </div>
+    </>
   );
 }

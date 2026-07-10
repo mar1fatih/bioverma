@@ -6,6 +6,14 @@ export default {
     body: 'Corps',
     categories: 'Catégories',
   },
+  seo: {
+    "skinCare-title": "Soins de la Peau Naturels | Bioverma",
+    "skinCare-desc": "Découvrez notre sélection complète de soins pour la peau.",
+    "makeUp-title": "Maquillage Éclatant | Bioverma",
+    "makeUp-desc": "Découvrez nos produits de maquillage bio.",
+    "body-title": "Soins du Corps | Bioverma",
+    "body-desc": "Prenez soin de votre corps naturellement.",
+  },
   home: {
     title: 'Bienvenue chez Bioverma',
     subtitle: 'Découvrez notre sélection en soins de la peau, maquillage et soins du corps.',

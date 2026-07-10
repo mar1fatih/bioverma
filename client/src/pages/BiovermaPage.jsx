@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from '../hooks/useTranslation';
+import { Helmet } from 'react-helmet-async';
 import { ROUTES } from '../constants/routes';
 import styles from './BiovermaPage.module.css';
 
@@ -7,6 +8,16 @@ export function BiovermaPage() {
   const t = useTranslation();
 
   return (
+    <>
+    <Helmet>
+      <title>{`${t('bioverma.badge')} | Bioverma`}</title>
+      <meta name="description" content={t('bioverma.heroSubtitle')} />
+      <link rel="canonical" href="https://bioverma.netlify.app/product/bioverma-poudre-blanchiment-dents" />
+      
+      <meta property="og:title" content={`${t('bioverma.badge')} | Bioverma`} />
+      <meta property="og:description" content={t('bioverma.heroSubtitle')} />
+      <meta property="og:image" content="https://bioverma.netlify.app/bioverma-product.png" />
+    </Helmet>
     <div className={styles.page}>
       {/* Hero Section */}
       <section className={styles.hero}>
@@ -173,5 +184,6 @@ export function BiovermaPage() {
         </Link>
       </section>
     </div>
+    </>
   );
 }

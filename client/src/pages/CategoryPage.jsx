@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { useTranslation } from '../hooks/useTranslation';
+import { Helmet } from 'react-helmet-async';
 import { ROUTES } from '../constants/routes';
 import { CATEGORIES } from '../constants/categories';
 import { PRODUCT_CATEGORIES } from '../constants/categories';
@@ -38,10 +39,26 @@ export function CategoryPage() {
   const categoryName = category ? t(`nav.${category.id}`) : slug;
   const products = (PRODUCT_CATEGORIES.find((p) => p.category === slug)).products;
 
+  const seoTitle = t(`seo.${slug}-title`);
+  const seoDesc = t(`seo.${slug}-desc`);
+  const canonicalUrl = `https://bioverma.netlify.app/${ROUTES.category(slug)}`;
 
   return (
   <>
-    {category ? (<div className={styles.page}>
+    {category ? (
+      <>
+      <Helmet>
+        <title>{seoTitle}</title>
+        <meta name="description" content={seoDesc} />
+        <link rel="canonical" href={canonicalUrl} />
+
+        {/* Social Media Share Previews */}
+        <meta property="og:title" content={seoTitle} />
+        <meta property="og:description" content={seoDesc} />
+        <meta property="og:type" content="website" />
+      </Helmet>
+
+      <div className={styles.page}>
       <nav className={styles.breadcrumb} aria-label="Breadcrumb">
         <Link to={ROUTES.HOME} className={styles.breadcrumbLink}>
           {t('nav.home')}
@@ -57,7 +74,8 @@ export function CategoryPage() {
       <Link to={ROUTES.HOME} className={styles.backLink}>
         {t('category.backToHome')}
       </Link>
-      </div>) : (<NotFoundPage/>)}
+      </div>
+      </>) : (<NotFoundPage/>)}
   </>
   );
 }

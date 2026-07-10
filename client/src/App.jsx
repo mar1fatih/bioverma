@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { LanguageProvider } from './context/LanguageContext';
 import { MainLayout } from './components/layout/MainLayout';
 import { HomePage } from './pages/HomePage';
@@ -16,6 +17,7 @@ import './assets/styles/global.css';
 
 function App() {
   return (
+    <HelmetProvider>
     <LanguageProvider>
       <BrowserRouter>
         <ScrollToTop />
@@ -34,6 +36,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </LanguageProvider>
+    </HelmetProvider>
   );
 }
 
