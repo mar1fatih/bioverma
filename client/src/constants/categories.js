@@ -25,6 +25,13 @@ export const PRODUCTS = [
     sku: 'poudre-dents',
     price: 189,
   },
+  {
+    product_name: 'ecran_solaire',
+    sku: 'ecran_solaire',
+    price: 179,
+    price2: 249,
+    price3: 299,
+  }
 ]
 
 export const CATEGORIES = [

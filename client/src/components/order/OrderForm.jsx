@@ -31,11 +31,26 @@ export function OrderForm({ onSuccess, sku }) {
     }));
   }, [sku]);
 
-  function quantityChange() {
-    setFormData((prev) => ({
+  function quantityChange(e) {
+    const value = e.target.value;
+    const price2 = PRODUCTS.find((p) => p.sku === sku).price2
+    const price3 = PRODUCTS.find((p) => p.sku === sku).price3
+    if (value == 2 && price2) {
+      setFormData((prev) => ({
+        ...prev,
+        price: price2,
+      }));
+    } else if (value == 3 && price3) {
+      setFormData((prev) => ({
+        ...prev,
+        price: price3,
+      }));
+    } else {
+      setFormData((prev) => ({
       ...prev,
       price: product_price * prev.qte,
     }));
+    }
   }
 
   function handleChange(e) {
