@@ -8,22 +8,30 @@ export const PRODUCTS = [
   {
     product_name: 'bioverma-creme-retinole',
     sku: 'creme-retanol',
-    price: 189,
+    price: 149,
+    price2: 189,
+    price3: 239,
   },
   {
     product_name: 'bioverma-shampoing-anti-chute',
     sku: 'sham-anti-chute',
-    price: 199,
+    price: 169,
+    price2: 219,
+    price3: 269,
   },
   {
     product_name: 'bioverma-shampoing-proteines',
     sku: 'shampoing-proteine',
-    price: 199,
+    price: 179,
+    price2: 239,
+    price3: 299,
   },
   {
     product_name: 'bioverma-poudre-blanchiment-dents',
     sku: 'poudre-dents',
-    price: 189,
+    price: 149,
+    price2: 199,
+    price3: 249,
   },
   {
     product_name: 'ecran_solaire',
@@ -31,6 +39,34 @@ export const PRODUCTS = [
     price: 179,
     price2: 249,
     price3: 299,
+  },
+  {
+    product_name: 'serum_niacinamide',
+    sku: 'niacinamide',
+    price: 169,
+    price2: 229,
+    price3: 289,
+  },
+  {
+    product_name: 'serum-retanol',
+    sku: 'serum-retanol',
+    price: 169,
+    price2: 219,
+    price3: 269,
+  },
+  {
+    product_name: 'eclat-zone-intime',
+    sku: 'eclat-zone-intime',
+    price: 159,
+    price2: 219,
+    price3: 279,
+  },
+  {
+    product_name: 'serum-cheveux',
+    sku: 'serum-cheveux',
+    price: 169,
+    price2: 219,
+    price3: 269,
   }
 ]
 

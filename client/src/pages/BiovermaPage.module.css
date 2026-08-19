@@ -15,10 +15,6 @@
   border: 1px solid var(--color-border);
 }
 
-.heroContent {
-  text-align: right;
-}
-
 .badge {
   display: inline-block;
   font-size: 0.8rem;

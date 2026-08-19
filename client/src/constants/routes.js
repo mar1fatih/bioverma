@@ -5,6 +5,11 @@ export const ROUTES = {
   ANTICHUTE: '/product/bioverma-shampoing-anti-chute',
   RETINOLE: '/product/bioverma-creme-retinole',
   PROTEINES: '/product/bioverma-shampoing-proteines',
+  ECRANSOLAIRE: '/product/bioverma-ecran-solaire',
+  NIACINAMIDE: '/product/bioverma-serum-niacinamide',
+  SERUMRITANOL: '/product/bioverma-serum-retanol',
+  INTIME: '/product/bioverma-eclat-zone-intime',
+  HYDRATANT: '/product/bioverma-serum-hydratant',
   category: (slug) => `/category/${slug}`,
   ORDER: '/order',
 };

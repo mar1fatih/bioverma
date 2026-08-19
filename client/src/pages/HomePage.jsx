@@ -110,6 +110,91 @@ export function HomePage() {
               </div>
             </div>
           </Link>
+          <Link to={ROUTES.ECRANSOLAIRE} className={styles.productCard}>
+            <div className={styles.productImageWrap}>
+              <img
+                src="/ecran-solaire.png"
+                alt={t('ecranSolaire.productAlt')}
+                className={styles.productImage}
+              />
+            </div>
+            <div className={styles.productBody}>
+              <h3 className={styles.productTitle}>{t('home.featuredProduct5Name')}</h3>
+              <p className={styles.productText}>{t('home.featuredProduct5Text')}</p>
+              <div className={styles.productFooter}>
+                <span className={styles.productPrice}>{t('home.featuredProduct5Price')}</span>
+                <span className={styles.productCta}>{t('home.featuredProduct5Cta')}</span>
+              </div>
+            </div>
+          </Link>
+          <Link to={ROUTES.NIACINAMIDE} className={styles.productCard}>
+            <div className={styles.productImageWrap}>
+              <img
+                src="/serum-niacinamide.png"
+                alt={t('serumNiacinamide.productAlt')}
+                className={styles.productImage}
+              />
+            </div>
+            <div className={styles.productBody}>
+              <h3 className={styles.productTitle}>{t('home.featuredProduct6Name')}</h3>
+              <p className={styles.productText}>{t('home.featuredProduct6Text')}</p>
+              <div className={styles.productFooter}>
+                <span className={styles.productPrice}>{t('home.featuredProduct6Price')}</span>
+                <span className={styles.productCta}>{t('home.featuredProduct6Cta')}</span>
+              </div>
+            </div>
+          </Link>
+          <Link to={ROUTES.HYDRATANT} className={styles.productCard}>
+            <div className={styles.productImageWrap}>
+              <img
+                src="/serum-hydratante.png"
+                alt={t('serumHydratante.productAlt')}
+                className={styles.productImage}
+              />
+            </div>
+            <div className={styles.productBody}>
+              <h3 className={styles.productTitle}>{t('home.featuredProduct7Name')}</h3>
+              <p className={styles.productText}>{t('home.featuredProduct7Text')}</p>
+              <div className={styles.productFooter}>
+                <span className={styles.productPrice}>{t('home.featuredProduct7Price')}</span>
+                <span className={styles.productCta}>{t('home.featuredProduct7Cta')}</span>
+              </div>
+            </div>
+          </Link>
+          <Link to={ROUTES.SERUMRITANOL} className={styles.productCard}>
+            <div className={styles.productImageWrap}>
+              <img
+                src="/serum-retinol.png"
+                alt={t('serumRetinol.productAlt')}
+                className={styles.productImage}
+              />
+            </div>
+            <div className={styles.productBody}>
+              <h3 className={styles.productTitle}>{t('home.featuredProduct8Name')}</h3>
+              <p className={styles.productText}>{t('home.featuredProduct8Text')}</p>
+              <div className={styles.productFooter}>
+                <span className={styles.productPrice}>{t('home.featuredProduct8Price')}</span>
+                <span className={styles.productCta}>{t('home.featuredProduct8Cta')}</span>
+              </div>
+            </div>
+          </Link>
+          <Link to={ROUTES.INTIME} className={styles.productCard}>
+            <div className={styles.productImageWrap}>
+              <img
+                src="/eclat-zone-intime.png"
+                alt={t('eclatZoneIntime.productAlt')}
+                className={styles.productImage}
+              />
+            </div>
+            <div className={styles.productBody}>
+              <h3 className={styles.productTitle}>{t('home.featuredProduct9Name')}</h3>
+              <p className={styles.productText}>{t('home.featuredProduct9Text')}</p>
+              <div className={styles.productFooter}>
+                <span className={styles.productPrice}>{t('home.featuredProduct9Price')}</span>
+                <span className={styles.productCta}>{t('home.featuredProduct9Cta')}</span>
+              </div>
+            </div>
+          </Link>
         </div>
       </section>
 
