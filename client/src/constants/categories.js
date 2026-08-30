@@ -67,6 +67,11 @@ export const PRODUCTS = [
     price: 169,
     price2: 219,
     price3: 269,
+  },
+  {
+    product_name: 'pack visage',
+    sku: 'pack-pack-visage-5146',
+    price: 299,
   }
 ]
 

@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '../hooks/useTranslation';
 import { Helmet } from 'react-helmet-async';
@@ -6,8 +7,28 @@ import { CategoryGrid } from '../components/store/CategoryGrid';
 import styles from './HomePage.module.css';
 import TopBar from '../components/layout/topBar';
 
+const HERO_SLIDES = [
+  { src: '/promo-1.png', altKey: 'home.heroImageAlt', link: '/order?sku=pack-pack-visage-5146'},
+  { src: '/promo-2.png', altKey: 'home.heroImage2Alt', link: '/order?sku=ecran_solaire'},
+];
+
 export function HomePage() {
   const t = useTranslation();
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (isPaused) return undefined;
+    const timer = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [isPaused, activeSlide]);
+
+  const goToSlide = (index) => setActiveSlide(index);
+  const goToPrev = () =>
+    setActiveSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
+  const goToNext = () => setActiveSlide((prev) => (prev + 1) % HERO_SLIDES.length);
 
   const seoTitle = `Bioverma | ${t('home.title')}`;
   const seoDesc = t('home.subtitle');
@@ -30,8 +51,52 @@ export function HomePage() {
         <p className={styles.subtitle}>{t('home.subtitle')}</p>
       </section>
 
-      <div className={styles.heroImageWrap}>
-        <img src="/main.png" alt={t('home.heroImageAlt')} className={styles.heroImage} />
+      <div
+        className={styles.heroImageWrap}
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        {HERO_SLIDES.map((slide, index) => (
+          <img
+            key={slide.src}
+            src={slide.src}
+            alt={t(slide.altKey)}
+            className={styles.heroImage}
+            style={{
+              display: index === activeSlide ? 'block' : 'none',
+            }}
+            onClick={() => window.location.href = slide.link}
+          />
+        ))}
+
+        <button
+          type="button"
+          aria-label={t('home.heroPrev')}
+          className={styles.heroNavPrev}
+          onClick={goToPrev}
+        >
+          ›
+        </button>
+        <button
+          type="button"
+          aria-label={t('home.heroNext')}
+          className={styles.heroNavNext}
+          onClick={goToNext}
+        >
+          ‹
+        </button>
+
+        <div className={styles.heroDots}>
+          {HERO_SLIDES.map((slide, index) => (
+            <button
+              key={slide.src}
+              type="button"
+              aria-label={`${t('home.heroGoToSlide')} ${index + 1}`}
+              className={`${styles.heroDot} ${index === activeSlide ? styles.heroDotActive : ''}`}
+              onClick={() => goToSlide(index)}
+            />
+          ))}
+        </div>
       </div>
 
       <TopBar />

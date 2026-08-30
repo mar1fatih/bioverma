@@ -208,3 +208,44 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+.heroImageWrap {
+  position: relative;
+  cursor: pointer;
+}
+.heroNavPrev,
+.heroNavNext {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 2;
+}
+.heroNavPrev { left: 16px; }
+.heroNavNext { right: 16px; }
+.heroDots {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+.heroDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+.heroDotActive {
+  background: #ffffff;
+}
