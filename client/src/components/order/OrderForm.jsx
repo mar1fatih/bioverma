@@ -4,7 +4,7 @@ import { createOrder } from "../../services/orderService";
 import { PRODUCTS } from "../../constants/categories";
 import styles from "./OrderForm.module.css";
 
-export function OrderForm({ onSuccess, sku }) {
+export function OrderForm({ onSuccess, sku, preset, productName, image }) {
   const t = useTranslation();
   const product_price = PRODUCTS.find((p) => p.sku === sku).price;
 
@@ -21,7 +21,7 @@ export function OrderForm({ onSuccess, sku }) {
 
 
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState(null); // { field, message }
 
   // ✅ auto set date + sku
   useEffect(() => {
@@ -30,6 +30,14 @@ export function OrderForm({ onSuccess, sku }) {
       sku: sku || prev.sku,
     }));
   }, [sku]);
+
+  // tier cards on the landing page set quantity + matching bundle price
+  useEffect(() => {
+    if (!preset) return;
+    const pr = PRODUCTS.find((p) => p.sku === sku);
+    const price = preset.qty === 1 ? pr.price : pr[`price${preset.qty}`] || pr.price * preset.qty;
+    setFormData((prev) => ({ ...prev, qte: preset.qty, price }));
+  }, [preset]);
 
   function quantityChange(e) {
     const value = e.target.value;
@@ -55,6 +63,7 @@ export function OrderForm({ onSuccess, sku }) {
 
   function handleChange(e) {
     const { name, value } = e.target;
+    if (error?.field === name) setError(null);
 
     setFormData((prev) => ({
       ...prev,
@@ -62,126 +71,131 @@ export function OrderForm({ onSuccess, sku }) {
     }));
   }
 
-  function validateForm() {
-    if (!formData.full_name.trim()) return t("order.requiredFullName");
-    if (!formData.phone.trim()) return t("order.requiredPhone");
-    if (!/^(06|07|\+2126|\+2127)\d{8}$/.test(formData.phone)) return t("order.invalidPhoneNumber");
-    if (!formData.sku.trim()) return t("order.requiredSku");
-    if (!formData.qte || formData.qte <= 0) return t("order.invalidQuantity");
-    if (!formData.price || formData.price <= 0) return t("order.invalidPrice");
+  function validateForm(phone) {
+    if (!formData.full_name.trim()) return { field: "full_name", message: t("order.requiredFullName") };
+    if (!phone) return { field: "phone", message: t("order.requiredPhone") };
+    if (!/^(06|07|\+2126|\+2127)\d{8}$/.test(phone)) return { field: "phone", message: t("order.invalidPhoneNumber") };
+    if (!formData.sku.trim()) return { field: "full_name", message: t("order.requiredSku") };
+    if (!formData.qte || formData.qte <= 0) return { field: "qte", message: t("order.invalidQuantity") };
+    if (!formData.price || formData.price <= 0) return { field: "qte", message: t("order.invalidPrice") };
     return null;
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const validationError = validateForm();
+    const phone = formData.phone.replace(/[\s.-]/g, "");
+    const validationError = validateForm(phone);
     if (validationError) {
       setError(validationError);
+      document.getElementById(`of-${validationError.field}`)?.focus();
       return;
     }
 
     setLoading(true);
-    setError("");
+    setError(null);
 
     try {
-      await createOrder(formData);
+      await createOrder({ ...formData, phone });
       onSuccess();
     } catch (err) {
-      setError(err.message || t("order.errorBox"));
+      setError({ field: null, message: err.message || t("order.errorBox") });
     } finally {
       setLoading(false);
     }
   }
 
+  const err = (name) => (error?.field === name ? error.message : "");
+  const fieldProps = (name) => ({
+    id: `of-${name}`,
+    name,
+    value: formData[name],
+    onChange: handleChange,
+    "aria-invalid": err(name) ? true : undefined,
+    "aria-describedby": err(name) ? `of-${name}-err` : undefined,
+  });
+  const fieldError = (name) =>
+    err(name) && (
+      <p className={styles.fieldError} id={`of-${name}-err`} role="alert">{err(name)}</p>
+    );
+
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
-      {error && <div className={styles.errorBox}>❌ {error}</div>}
-
-      <div className={styles.grid}>
-        <div className={styles.field}>
-          <label>{t('order.fullNameLabel')}</label>
-          <input
-            type="text"
-            name="full_name"
-            placeholder={t("order.fullNamePlaceholder")}
-            value={formData.full_name}
-            onChange={handleChange}
-          />
+    <form className={styles.form} onSubmit={handleSubmit} noValidate>
+      <div className={styles.summary} aria-live="polite">
+        {image && <img src={image} alt="" className={styles.thumb} />}
+        <div className={styles.summaryText}>
+          <strong>{productName}</strong>
+          <span>{t("order.quantityLabel").replace(" *", "")} : {formData.qte}</span>
         </div>
-
-        <div className={styles.field}>
-          <label>{t("order.phoneLabel")}</label>
-          <input
-            type="tel"
-            name="phone"
-            placeholder={t("order.phonePlaceholder")}
-            value={formData.phone}
-            onChange={handleChange}
-          />
-        </div>
-
-        {/* ✅ Address optional */}
-        <div className={styles.field}>
-          <label>{t("order.addressLabel")}</label>
-          <input
-            type="text"
-            name="address"
-            placeholder={t("order.addressPlaceholder")}
-            value={formData.address}
-            onChange={handleChange}
-          />
-        </div>
-
-        {/* SKU auto-filled */}
-        <div className={styles.field}>
-          <label>{t("order.skuLabel")}</label>
-          <input
-            type="text"
-            name="sku"
-            value={formData.sku}
-            readOnly
-          />
-        </div>
-
-        <div className={styles.field}>
-          <label>{t("order.quantityLabel")}</label>
-          <input
-            type="number"
-            name="qte"
-            min="1"
-            value={formData.qte}
-            onChange={(e) => {
-              handleChange(e);
-              quantityChange(e);
-            }}
-          />
-        </div>
-        <div className={styles.field}>
-          <label>{t("order.priceLabel")}</label>
-          <input
-            type="text"
-            name="price"
-            value={formData.price}
-            readOnly
-          />
+        <div className={styles.summaryTotal}>
+          <span>{t("orderLanding.total")}</span>
+          <strong>{formData.price} {t("orderLanding.currency")}</strong>
         </div>
       </div>
 
+      {error && !error.field && (
+        <div className={styles.errorBox} role="alert">{error.message}</div>
+      )}
 
-      <div className={styles.field}>
-        <label>{t("order.noteLabel")}</label>
-        <textarea
-          name="note"
-          placeholder={t("order.notePlaceholder")}
-          value={formData.note}
-          onChange={handleChange}
-        />
+      <div className={styles.fields}>
+        <div className={styles.field}>
+          <label htmlFor="of-full_name">{t("order.fullNameLabel")}</label>
+          <div className={styles.control}>
+            <Icon d="M20 21a8 8 0 0 0-16 0M12 13a5 5 0 1 0 0-10 5 5 0 0 0 0 10z" />
+            <input type="text" autoComplete="name" enterKeyHint="next"
+              placeholder={t("order.fullNamePlaceholder")} {...fieldProps("full_name")} />
+          </div>
+          {fieldError("full_name")}
+        </div>
+
+        <div className={styles.field}>
+          <label htmlFor="of-phone">{t("order.phoneLabel")}</label>
+          <div className={styles.control}>
+            <Icon d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" />
+            <input type="tel" inputMode="tel" autoComplete="tel" enterKeyHint="next" dir="ltr"
+              placeholder={t("order.phonePlaceholder")} {...fieldProps("phone")} />
+          </div>
+          {fieldError("phone")}
+        </div>
+
+        <div className={styles.field}>
+          <label htmlFor="of-address">{t("order.addressLabel")}</label>
+          <div className={styles.control}>
+            <Icon d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
+            <input type="text" autoComplete="street-address" enterKeyHint="next"
+              placeholder={t("order.addressPlaceholder")} {...fieldProps("address")} />
+          </div>
+        </div>
+
+        <div className={`${styles.field} ${styles.qty}`}>
+          <label htmlFor="of-qte">{t("order.quantityLabel")}</label>
+          <div className={styles.control}>
+            <input type="number" inputMode="numeric" min="1" {...fieldProps("qte")}
+              onChange={(e) => { handleChange(e); quantityChange(e); }} />
+          </div>
+          {fieldError("qte")}
+        </div>
+
+        <div className={`${styles.field} ${styles.wide}`}>
+          <label htmlFor="of-note">{t("order.noteLabel")}</label>
+          <div className={styles.control}>
+            <textarea rows="2" placeholder={t("order.notePlaceholder")} {...fieldProps("note")} />
+          </div>
+        </div>
       </div>
 
-      <button className={styles.button} disabled={loading}>
-        {loading ? t("order.sendingButton") : t("order.submitButton")}
+      <button className={styles.button} disabled={loading} aria-busy={loading}>
+        {loading && <span className={styles.spinner} aria-hidden="true" />}
+        <span>{loading ? t("order.sendingButton") : `${t("order.submitButton")} · ${formData.price} ${t("orderLanding.currency")}`}</span>
       </button>
+      <p className={styles.secure}>{t("orderLanding.secureNote")}</p>
     </form>
+  );
+}
+
+function Icon({ d }) {
+  return (
+    <svg className={styles.icon} viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+      strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={d} /></svg>
   );
 }
