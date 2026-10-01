@@ -75,6 +75,7 @@ export function OrderForm({ onSuccess, sku, preset, productName, image }) {
     if (!formData.full_name.trim()) return { field: "full_name", message: t("order.requiredFullName") };
     if (!phone) return { field: "phone", message: t("order.requiredPhone") };
     if (!/^(06|07|\+2126|\+2127)\d{8}$/.test(phone)) return { field: "phone", message: t("order.invalidPhoneNumber") };
+    if (!formData.address.trim()) return { field: "address", message: t("order.requiredAddress") };
     if (!formData.sku.trim()) return { field: "full_name", message: t("order.requiredSku") };
     if (!formData.qte || formData.qte <= 0) return { field: "qte", message: t("order.invalidQuantity") };
     if (!formData.price || formData.price <= 0) return { field: "qte", message: t("order.invalidPrice") };
@@ -165,6 +166,7 @@ export function OrderForm({ onSuccess, sku, preset, productName, image }) {
             <input type="text" autoComplete="street-address" enterKeyHint="next"
               placeholder={t("order.addressPlaceholder")} {...fieldProps("address")} />
           </div>
+          {fieldError("address")}
         </div>
 
         <div className={`${styles.field} ${styles.qty}`}>

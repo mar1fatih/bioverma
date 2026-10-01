@@ -25,6 +25,7 @@ body {
 
 html, body {
   overflow-x: hidden;
+  overflow-x: clip; /* 'hidden' turns body into a scroll container and breaks position: sticky */
   overscroll-behavior-x: none;
 }
 
