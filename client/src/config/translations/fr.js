@@ -555,7 +555,7 @@ export default {
     // form labels
     fullNameLabel: 'Nom complet *',
     phoneLabel: 'Téléphone *',
-    addressLabel: 'Adresse (optionnel)',
+    addressLabel: 'Adresse *',
     quantityLabel: 'Quantité *',
     priceLabel: 'Total pour la quantité choisie (DH)',
     noteLabel: 'Note (optionnel)',
