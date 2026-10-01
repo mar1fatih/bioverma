@@ -574,6 +574,7 @@ export default {
     errorBox: '❌ Une erreur est survenue.',
     requiredFullName: 'Le nom complet est obligatoire.',
     requiredPhone: 'Le téléphone est obligatoire.',
+    requiredAddress: 'Votre adresse est obligatoire.',
     invalidPhoneNumber: "Le numéro de téléphone est invalide.",
     requiredSku: 'Le SKU du produit est obligatoire.',
     invalidQuantity: 'La quantité doit être valide.',

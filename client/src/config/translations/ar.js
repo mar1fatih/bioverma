@@ -574,6 +574,7 @@ export default {
     errorBox: "❌ حدث خطأ ما.",
     requiredFullName: "الاسم الكامل مطلوب.",
     requiredPhone: "رقم الهاتف مطلوب.",
+    requiredAddress: 'العنوان مطلوب.',
     invalidPhoneNumber: "رقم الهاتف غير صالح.",
     requiredSku: "رمز المنتج مطلوب.",
     invalidQuantity: "الكمية يجب أن تكون صحيحة.",

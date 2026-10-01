@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { useTranslation } from "../hooks/useTranslation";
+import ScrollStack, { ScrollStackItem } from "../components/common/ScrollStack";
 import { OrderForm } from "../components/order/OrderForm";
 import { PRODUCTS } from "../constants/categories";
 import { ROUTES } from "../constants/routes";
@@ -189,15 +190,15 @@ export function OrderPage() {
       {ns && (
         <section className={styles.block}>
           <h2 className={styles.h2}>{L("benefitsTitle")}</h2>
-          <div className={styles.benefits}>
+          <ScrollStack itemDistance={48} itemStackDistance={0}>
             {[1, 2, 3].map((i) => (
-              <div key={i} className={styles.benefit}>
+              <ScrollStackItem key={i} itemClassName={`${styles.benefit} ${styles[`benefit${i}`]}`}>
                 <span className={styles.stepN}>{i}</span>
                 <h3>{t(`${ns}.benefit${i}Title`)}</h3>
                 <p>{t(`${ns}.benefit${i}Text`)}</p>
-              </div>
+              </ScrollStackItem>
             ))}
-          </div>
+          </ScrollStack>
         </section>
       )}
 
