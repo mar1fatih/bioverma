@@ -1,0 +1,57 @@
+.draw-button {
+  position: relative;
+  width: 112px;
+  height: 50px;
+
+  border: 2px solid #d7f1b6;
+  border-radius: 999px;
+
+  background: #7e8b6d;
+  cursor: pointer;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--color-on-primary);
+}
+
+.draw-button svg {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  fill: none;
+  pointer-events: none;
+}
+
+.draw-border {
+  fill: none;
+  stroke: #b6eda2;
+  stroke-width: 3;
+  stroke-dasharray: 100 500;
+  stroke-dashoffset: 0;
+  animation: border-animation 1.5s linear infinite;
+}
+
+@keyframes border-animation {
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: -500;
+  }
+}
+
+.draw-button span {
+  position: relative;
+  z-index: 2;
+
+  color: white;
+  font-size: 18px;
+}

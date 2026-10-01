@@ -16,5 +16,9 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "dependencies": {
+    "motion": "^13.4.6",
+    "ogl": "^1.0.11"
   }
 }
