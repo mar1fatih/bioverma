@@ -1,0 +1,36 @@
+diff --git a/client/src/constants/categories.js b/client/src/constants/categories.js
+index d508915..cb07e4b 100644
+--- a/client/src/constants/categories.js
++++ b/client/src/constants/categories.js
+@@ -72,6 +72,7 @@ export const PRODUCTS = [
+     product_name: 'pack visage',
+     sku: 'pack-pack-visage-5146',
+     price: 299,
++    oldPrice: 458,
+   }
+ ]
+ 
+diff --git a/client/src/pages/OrderPage.jsx b/client/src/pages/OrderPage.jsx
+index fc962bb..3036c20 100644
+--- a/client/src/pages/OrderPage.jsx
++++ b/client/src/pages/OrderPage.jsx
+@@ -123,6 +123,7 @@ export function OrderPage() {
+           <p className={styles.heroSub}>{sub}</p>
+           <div className={styles.priceRow}>
+             <strong className={styles.bigPrice}>{product.price} {L("currency")}</strong>
++            {product.oldPrice && <del className={styles.oldPrice}>{product.oldPrice} {L("currency")}</del>}
+             <span className={styles.chip}>{L("p2Title")}</span>
+           </div>
+           <a href="#order-form" className={styles.cta}>{L("cta")}</a>
+diff --git a/client/src/pages/OrderPage.module.css b/client/src/pages/OrderPage.module.css
+index 6647c7e..e382cc9 100644
+--- a/client/src/pages/OrderPage.module.css
++++ b/client/src/pages/OrderPage.module.css
+@@ -25,6 +25,7 @@
+ .heroSub { font-size: 1.05rem; color: var(--color-text-muted); max-width: 50ch; margin: 0 0 18px; }
+ .priceRow { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; }
+ .bigPrice { font-family: var(--font-display); font-size: 2.2rem; color: var(--color-primary-hover); }
++.oldPrice { font-size: 1.3rem; font-weight: 600; color: var(--color-text-muted); text-decoration-thickness: 2px; }
+ .chip { padding: 5px 12px; border-radius: 999px; border: 1.5px solid var(--color-primary); font-size: .85rem; font-weight: 600; }
+ .cta { display: block; width: fit-content; min-width: 260px; text-align: center; padding: 17px 32px; border-radius: 999px;
+   background: var(--color-primary); color: var(--color-on-primary); font-weight: 800; font-size: 1.1rem; text-decoration: none;

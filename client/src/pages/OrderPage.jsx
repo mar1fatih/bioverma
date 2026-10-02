@@ -123,6 +123,7 @@ export function OrderPage() {
           <p className={styles.heroSub}>{sub}</p>
           <div className={styles.priceRow}>
             <strong className={styles.bigPrice}>{product.price} {L("currency")}</strong>
+            {product.oldPrice && <del className={styles.oldPrice}>{product.oldPrice} {L("currency")}</del>}
             <span className={styles.chip}>{L("p2Title")}</span>
           </div>
           <a href="#order-form" className={styles.cta}>{L("cta")}</a>
