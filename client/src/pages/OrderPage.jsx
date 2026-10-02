@@ -25,7 +25,7 @@ const MEDIA = {
   "serum-retanol": { img: "/serum-retinol.png", page: ROUTES.SERUMRITANOL, ns: "serumRetinol" },
   "eclat-zone-intime": { img: "/eclat-zone-intime.png", page: ROUTES.INTIME, ns: "soinEclatSensible" },
   "serum-cheveux": { img: "/bioverma-serum-cheveux.png", page: ROUTES.HYDRATANT, ns: "serumCheveux" },
-  "pack-pack-visage-5146": { img: "/logo.png", page: ROUTES.HOME },
+  "pack-pack-visage-5146": { img: "/pack_visage.png", page: ROUTES.HOME , ns: "packVisage" },
 };
 
 export function OrderPage() {

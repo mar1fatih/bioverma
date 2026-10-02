@@ -18,7 +18,7 @@
   background: radial-gradient(circle at 50% 40%, #fff 0%, var(--color-primary-subtle) 70%); border: 1px solid var(--color-border); }
 .heroImage img { width: 100%; max-height: 460px; object-fit: contain; display: block; filter: drop-shadow(0 18px 24px var(--shadow-color)); }
 .badge { position: absolute; top: 14px; inset-inline-start: 14px; padding: 6px 12px; border-radius: 999px;
-  background: var(--color-text); color: var(--color-bg); font-size: .8rem; font-weight: 700; z-index: 1; }
+  background: var(--color-text); color: var(--color-bg); font-size: .8rem; font-weight: 700; z-index: 2; }
 .kicker { display: inline-block; margin-bottom: 10px; padding: 4px 12px; border-radius: 999px; background: var(--color-primary-subtle);
   color: var(--color-primary-hover); font-weight: 700; font-size: .9rem; }
 .heroTitle { font-family: var(--font-display); font-size: clamp(1.9rem, 5vw, 3.3rem); line-height: 1.08; margin: 0 0 12px; letter-spacing: -.01em; }
